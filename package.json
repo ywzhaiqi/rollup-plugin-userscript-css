@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-userscript-css",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "ywzhaiqi <ywzhaiqi@gmail.com> (https://github.com/ywzhaiqi)",
   "description": "import css file for userscirpt",
   "main": "dist/rollup-plugin-userscript-css.js",
@@ -11,14 +11,23 @@
   "scripts": {
     "build": "rollup -c"
   },
-  "keywords": [
-    "rollup-plugin"
-  ],
-  "license": "ISC",
   "dependencies": {
     "rollup-pluginutils": "^2.0.1"
   },
   "devDependencies": {
     "rollup": "^0.48.2"
+  },
+  "keywords": [
+    "rollup-plugin",
+    "userscript"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ywzhaiqi/rollup-plugin-userscript-css",
+  "bugs": {
+    "url": "https://github.com/ywzhaiqi/rollup-plugin-userscript-css/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ywzhaiqi/rollup-plugin-userscript-css"
   }
 }

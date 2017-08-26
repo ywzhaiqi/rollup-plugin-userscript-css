@@ -8,7 +8,9 @@ async function test() {
     input: './fixtures/hello.js',
 
     plugins: [
-      userScriptCss()
+      userScriptCss({
+        include: ['**/*.css'],
+      })
     ]
   }
 

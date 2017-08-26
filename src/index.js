@@ -1,8 +1,12 @@
 import { createFilter } from 'rollup-pluginutils'
 import { insertStyle } from './style.js';
 
-function userScriptCss(options = { insert: true }) {
-  const filter = createFilter(options.include || ['**/*.css'], options.exclude)
+function userScriptCss(options = {}) {
+  if (typeof options.insert === 'undefined') {
+    options.insert = true;
+  }
+
+  const filter = createFilter(options.include || ['**/*.css'], options.exclude || 'node_modules/**')
 
   const injectFnName = '__$styleInject'
 
@@ -15,8 +19,16 @@ function userScriptCss(options = { insert: true }) {
     transform(code, id) {
       if (!filter(id)) return;
 
+      let exportCode = '';
+
+      if (options.insert != false) {
+        exportCode = `export default ${injectFnName}(${JSON.stringify(code)});`;
+      } else {
+        exportCode = `export default ${JSON.stringify(code.toString())};`
+      }
+
       return {
-        code: (`export default ${injectFnName}(${JSON.stringify(code)});`),
+        code: exportCode,
         map: { mappings: '' }
       };
     }

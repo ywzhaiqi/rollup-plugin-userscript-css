@@ -12,5 +12,6 @@ export default {
       format: 'es',
       file: pkg['jsnext:main']
     }
-  ]
+  ],
+  external: ['rollup-pluginutils']
 };

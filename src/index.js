@@ -26,7 +26,7 @@ function userScriptCss(options = {}) {
         codeCount += 1;
         exportCode = `export default ${injectFnName}(${JSON.stringify(code)});`;
       } else {
-        exportCode = `export default ${JSON.stringify(code.toString())};`
+        exportCode = `export default ${JSON.stringify(code)};`
       }
 
       return {
